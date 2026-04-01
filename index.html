@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Digital Clock</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="clock-wrap">
+    <h1 class="title">NEON CLOCK</h1>
+    <div class="controls">
+      <div class="control-group">
+        <p class="control-label" id="timezoneLabel">Time Zone</p>
+        <div class="button-row" id="timezoneButtons">
+          <button class="control-btn active" data-timezone="America/New_York">New York</button>
+          <button class="control-btn" data-timezone="America/Chicago">Chicago</button>
+          <button class="control-btn" data-timezone="America/Denver">Denver</button>
+          <button class="control-btn" data-timezone="America/Los_Angeles">Los Angeles</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <p class="control-label" id="languageLabel">Language</p>
+        <div class="button-row" id="languageButtons">
+          <button class="control-btn active" data-locale="en-US">English</button>
+          <button class="control-btn" data-locale="fr-FR">Francais</button>
+        </div>
+      </div>
+    </div>
+    <div id="clock" class="clock" aria-live="polite">00:00:00</div>
+    <p class="date" id="dateText"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
