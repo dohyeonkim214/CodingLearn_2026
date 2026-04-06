@@ -8,30 +8,62 @@
 </head>
 <body>
   <main class="page">
-    <section class="card" aria-label="Tip calculator">
-      <h1 class="title">팁 계산기</h1>
-
-      <label for="priceInput" class="label">음식 가격</label>
-      <input
-        id="priceInput"
-        class="input"
-        type="number"
-        min="0"
-        step="0.01"
-        placeholder="예: 25000"
-      />
-
-      <p class="label">팁 퍼센트</p>
-      <div class="tip-buttons" id="tipButtons">
-        <button type="button" class="tip-btn active" data-tip="10">10%</button>
-        <button type="button" class="tip-btn" data-tip="15">15%</button>
-        <button type="button" class="tip-btn" data-tip="20">20%</button>
+    <section class="card" aria-label="Food selection and tip calculator">
+      <div class="card-header">
+        <p class="eyebrow">Step 1</p>
+        <h1 class="title">음식을 먼저 골라주세요</h1>
+        <p class="description">메뉴를 누르면 해당 가격으로 팁 계산기가 열립니다.</p>
       </div>
 
-      <div class="result-wrap">
-        <p class="result-label">최종 가격</p>
-        <p id="finalPrice" class="result-value">0원</p>
+      <div class="food-grid" id="foodGrid">
+        <button type="button" class="food-option" data-name="떡볶이" data-price="10">
+          <img class="food-image" src="img/tteokppokki.jpeg" alt="떡볶이" />
+          <span class="food-name">떡볶이</span>
+          <span class="food-price">$10.00</span>
+        </button>
+        <button type="button" class="food-option" data-name="순대" data-price="15">
+          <img class="food-image" src="img/sundae.jpeg" alt="순대" />
+          <span class="food-name">순대</span>
+          <span class="food-price">$15.00</span>
+        </button>
+        <button type="button" class="food-option" data-name="탕수육" data-price="25">
+          <img class="food-image" src="img/tangsuyuk.jpeg" alt="탕수육" />
+          <span class="food-name">탕수육</span>
+          <span class="food-price">$25.00</span>
+        </button>
       </div>
+
+      <section class="calculator" id="calculator" hidden>
+        <div class="selection-bar">
+          <div>
+            <p class="label selected-label">선택한 음식</p>
+            <p id="selectedFood" class="selected-food">-</p>
+          </div>
+          <button type="button" class="change-btn" id="changeFoodButton">다시 선택</button>
+        </div>
+
+        <label for="priceInput" class="label">음식 가격</label>
+        <input
+          id="priceInput"
+          class="input"
+          type="number"
+          min="0"
+          step="0.01"
+          readonly
+        />
+
+        <p class="label">팁 퍼센트</p>
+        <div class="tip-buttons" id="tipButtons">
+          <button type="button" class="tip-btn active" data-tip="10">10%</button>
+          <button type="button" class="tip-btn" data-tip="15">15%</button>
+          <button type="button" class="tip-btn" data-tip="20">20%</button>
+        </div>
+
+        <div class="result-wrap">
+          <p class="result-label">최종 가격</p>
+          <p id="finalPrice" class="result-value">$0.00</p>
+        </div>
+      </section>
     </section>
   </main>
 
